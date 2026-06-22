@@ -4,7 +4,8 @@ import {
 
 AboutHero,
 AboutStatsSection,
-AboutWhyZoikomeds
+AboutWhyZoikomeds,
+AboutPlatformCapabilities
 
  } from "@/components/about/";
 
@@ -22,6 +23,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutStatsSection />
       <AboutWhyZoikomeds />
+      <AboutPlatformCapabilities />
     </main>
   );
 }
