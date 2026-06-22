@@ -102,7 +102,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-12">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           {/* Logo + tagline */}
-          <div className="flex flex-col gap-4 lg:max-w-md">
+          <div className="flex  flex-col gap-4 lg:max-w-md">
             <Link href="/" className="inline-block w-fit">
               {/* Replace src below with your logo image URL */}
               <Image
@@ -114,12 +114,30 @@ export default function Footer() {
                 priority
               />
             </Link>
-            <p className="text-sm leading-relaxed text-slate-400">
+            
+          </div>
+
+
+   <div className="flex flex-wrap gap-3 lg:justify-end">
+          <p className="text-sm leading-relaxed text-slate-400">
               Global medicine availability infrastructure — search, signal,
               verify. Not a pharmacy. No prescribing, dispensing, or medical
               advice.
             </p>
+             {/* Status pills */}
+
+          <span className="flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-400 ring-1 ring-emerald-500/30">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Infrastructure monitoring active
+          </span>
+          <span className="flex items-center gap-2 rounded-full bg-amber-500/10 px-4 py-1.5 text-xs font-medium text-amber-400 ring-1 ring-amber-500/30">
+            <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-amber-400 text-[8px] font-bold text-amber-950">
+              !
+            </span>
+            47+ Planned Market Framework
+          </span>
           </div>
+
 
           {/* Badges */}
           <div className="flex flex-wrap items-start gap-3 lg:justify-end">
@@ -138,19 +156,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Status pills */}
-        <div className="mt-6 flex flex-wrap gap-3">
-          <span className="flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-400 ring-1 ring-emerald-500/30">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Infrastructure monitoring active
-          </span>
-          <span className="flex items-center gap-2 rounded-full bg-amber-500/10 px-4 py-1.5 text-xs font-medium text-amber-400 ring-1 ring-amber-500/30">
-            <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-amber-400 text-[8px] font-bold text-amber-950">
-              !
-            </span>
-            47+ Planned Market Framework
-          </span>
-        </div>
+       
       </div>
 
       <div className="border-t border-slate-700/60" />
