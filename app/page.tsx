@@ -229,7 +229,7 @@ export default function Home() {
 
       {/* Enterprise */}
 
-      <div style={{ width: "100vw", paddingTop: "60px", backgroundColor: "#F4F7FC", padding: "25px" }} className="flex flex-col items-center">
+      <div style={{ width: "100vw", paddingTop: "60px", backgroundColor: "white", padding: "25px" }} className="flex flex-col items-center">
         <div className="w-[160px] h-[36px] rounded-full border border-[#B2E8D8] bg-[#E6F7F2] flex items-center justify-center">
           <span className="text-sm text-[#077A5C]">
             Enterprise Solutions
@@ -243,23 +243,108 @@ export default function Home() {
             for health systems, governments, pharma, and developers.</p>
         </div>
 
-        <div style={{ display: "flex", gap: "10px", marginTop: "35px", flexWrap: "wrap", alignItems:"center",justifyContent:"center" }}>
+        <div style={{ display: "flex", gap: "10px", marginTop: "35px", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
           <div style={{ width: "554px", height: "192.7px", borderRadius: "32px", border: "1px solid #B2E8D8" }}>
-            <img src="ecard.png" alt="enterprise" />
+            <img src="ecard.png" alt="ZoikoSignal™ Shortage Intelligence" />
           </div>
           <div style={{ width: "554px", height: "192.7px", borderRadius: "32px", border: "1px solid #1A56DB1A" }}>
-            <img src="ecard2.png" alt="enterprise1" />
+            <img src="ecard2.png" alt="ZoikoAvail™ API" />
           </div>
           <div style={{ width: "554px", height: "192.7px", borderRadius: "32px", border: "1px solid #1A56DB1A" }}>
-            <img src="ecard3.png" alt="Health Systems & telehealth" />
+            <img src="ecard3.png" alt="MediBase™ Data Services" />
           </div>
           <div style={{ width: "554px", height: "192.7px", borderRadius: "32px", border: "1px solid #1A56DB1A" }}>
-            <img src="ecard4.png" alt="Government and manufacturers" />
+            <img src="ecard4.png" alt="Verified Pharmacy Network" />
           </div>
         </div>
-        <img src="ecardbanner.png" alt="banner" style={{height:"137px",marginTop:"15px"}} />
+        <img src="ecardbanner.png" alt="banner" style={{ height: "137px", marginTop: "15px" }} />
       </div>
 
+      {/* Trust & compliance */}
+
+      <div style={{ width: "100vw", paddingTop: "60px", backgroundColor: "#F4F7FC", padding: "25px" }} className="flex flex-col items-center">
+        <div className="w-[160px] h-[36px] rounded-full border border-[#B2E8D8] bg-[#E6F7F2] flex items-center justify-center">
+          <span className="text-xs text-[#077A5C]">
+            TRUST & COMPLIANCE
+          </span>
+        </div>
+        <div className="w-335px flex flex-col items-center mt-4">
+          <h1 className="text-3xl font-bold">Built for verified trust</h1>
+          <h1 className="text-3xl font-bold text-[#0A9B74]"><span className="text-black">and</span> regulated environments.</h1>
+          <p style={{ width: "515.33px", fontSize: "small", textAlign: "center", marginTop: "10px" }}>Every boundary is explicit, every data decision is user-controlled,
+            and every architecture decision starts from privacy-by-design principles.</p>
+        </div>
+
+        <div style={{ display: "flex", gap: "10px", marginTop: "35px", flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: "368px", height: "225px", borderRadius: "22px", border: "1px solid #B2E8D8" }}>
+            <img src="trust1.png" alt="Privacy by design" />
+          </div>
+          <div style={{ width: "364px", height: "225px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="trust2.png" alt="Verified pharmacies only" />
+          </div>
+          <div style={{ width: "364px", height: "225px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="trust3.png" alt="Strict role boundaries" />
+          </div>
+          <div style={{ width: "364px", height: "225px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="trust4.png" alt="Confidence signals only" />
+          </div>
+          <div style={{ width: "366px", height: "225px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="trust5.png" alt="Controlled medicine safeguards" />
+          </div>
+          <div style={{ width: "364px", height: "225px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="trust6.png" alt="Enterprise security posture" />
+          </div>
+        </div>
+        <img src="ecardbanner.png" alt="banner" style={{ height: "137px", marginTop: "15px" }} />
+      </div>
+
+      {/* GLOBAL + FINAL CTA */}
+
+      <div style={{ width: "100vw", paddingTop: "60px", backgroundColor: "white", padding: "25px" }} className="flex flex-col items-center">
+        <div className="w-[160px] h-[36px] rounded-full border border-[#1A56DB2E] bg-[#E8F0FE] flex items-center justify-center">
+          <span className="text-xs font-medium text-[#1A56DB]">
+            GLOBAL EXPANSION
+          </span>
+        </div>
+        <div className="w-335px flex flex-col items-center mt-4">
+          <h1 className="text-3xl font-bold">Scalling market by market,</h1>
+          <h1 className="text-3xl font-bold text-[#0A9B74]"><span className="text-black">jurisdiction by</span> jurisdiction.</h1>
+          <p style={{ width: "515.33px", fontSize: "small", textAlign: "center", marginTop: "10px" }}>USA first, UK second — each market activated only after pharmacy network density,
+            regulatory clearance, and infrastructure readiness are confirmed.</p>
+        </div>
+
+        <div style={{ display: "flex", gap: "10px", marginTop: "35px" }}>
+          <div style={{ width: "366.60px", height: "73px", borderRadius: "22px", border: "1px solid #B2E8D8" }}>
+            <img src="market1.png" alt="🇺🇸 United States Beta launch · Active" />
+          </div>
+          <div style={{ width: "366.60px", height: "73px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="market2.png" alt="🇬🇧 United Kingdom Launching next" />
+          </div>
+          <div style={{ width: "366.60px", height: "73px", borderRadius: "22px", border: "1px solid #1A56DB1A" }}>
+            <img src="market3.png" alt="🌍 45+ Markets Readiness review underway" />
+          </div>
+        </div>
+
+        <div style={{ height: "280.45px", width: "1124px", borderRadius: "32px", background: "linear-gradient(to right, #0D1E3D, #1A4A7A)", marginTop: "15px", padding: "50px" }} className="flex flex-col gap-2">
+          <h1 className="text-3xl font-bold text-white">Search now, save what matters, or <span className="text-[#3DE8BB]">connect your organization.</span></h1>
+          <p className="text-xs text-white/50 w-[366px]">
+            Availability intelligence for patients, pharmacies, health systems,
+            and governments — from a single verified source of truth.
+          </p>
+          <div className="mt-10 flex gap-2">
+            <button className="flex items-center gap-2 text-white bg-[#0A9B74] px-5 p-2 text-sm" style={{ borderRadius: "999px" }}>
+              <Search size={20} />
+              <span>Check a medicine now</span>
+            </button>
+            <button className="flex items-center gap-2 text-white px-5 p-2 text-sm" style={{ border: "1px solid #ffffff", borderRadius: "999px" }}>
+              <span>Create free account</span>
+            </button>
+            <button className="flex items-center gap-2 text-white px-5 p-2 text-sm" style={{ border: "1px solid #ffffff", borderRadius: "999px" }}>
+              <span>Enterprise sales</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
     </div >
   )
