@@ -70,7 +70,7 @@ export default function HomeGlobalExpansionSection() {
             Global expansion
           </span>
 
-          <h2 className="mt-5 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-5 text-[38px] font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Scaling market by market,
             <br />
             jurisdiction by <span className="text-[#0A9B74]">jurisdiction.</span>

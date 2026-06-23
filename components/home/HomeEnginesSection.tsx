@@ -92,7 +92,7 @@ export default function HomeEnginesSection() {
               Proprietary infrastructure
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold leading-tight text-white sm:text-5xl">
+            <h2 className="mt-5 text-[38px] font-extrabold leading-tight text-white sm:text-5xl">
               Three engines.
               <br />
               <span className="text-emerald-400">One availability layer.</span>

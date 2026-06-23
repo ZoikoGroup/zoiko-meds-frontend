@@ -5,10 +5,13 @@ import MedicineSearchWidget from "./MedicineSearchWidget";
 
 export default function HeroSection() {
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setLoaded(true), 80); return () => clearTimeout(t); }, []);
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 80);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
-    <section className="relative w-full min-h-[620px] overflow-hidden">
+    <section className="relative w-full bg-white px-4 pt-6 sm:px-8 sm:pt-8 lg:px-12">
       <style>{`
         @keyframes heroFade {
           from { opacity: 0; transform: translateY(22px); }
@@ -28,56 +31,63 @@ export default function HeroSection() {
         .live-dot   { animation: dotPulse 1.8s ease-in-out infinite; }
       `}</style>
 
-      {/* ── BG IMAGE ── */}
-      <div className="absolute inset-0 z-0">
-        {/* Replace with your actual pharmacy hero image */}
-        <img
-          src="/home/ZoikoMeds-bg.webp"
-          alt="Pharmacists checking medicine availability"
-          className="w-full h-full object-cover object-center"
-          onError={(e) => {
-            const el = e.currentTarget as HTMLImageElement;
-            el.style.display = "none";
-          }}
-        />
-        {/* Fallback gradient when image missing */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#062238] via-[#0a3352] to-[#0d4a6b]" />
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#061828]/85 via-[#061828]/60 to-transparent" />
-        {/* Bottom fade into white for widget */}
-        <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-white via-white/60 to-transparent" />
-      </div>
+      <div className="relative mx-auto max-w-7xl">
+        {/* ── ROUNDED IMAGE CARD ── */}
+        <div className="relative h-[360px] w-full overflow-hidden rounded-3xl sm:h-[420px] lg:h-[480px]">
+          <img
+            src="/home/ZoikoMeds-bg.webp"
+            alt="Pharmacists checking medicine availability"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            onError={(e) => {
+              const el = e.currentTarget as HTMLImageElement;
+              el.style.display = "none";
+            }}
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#24356D] via-[#0a3352] to-[#0d4a6b]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#24356D]/85 via-[#061828]/55 to-transparent" />
 
-      {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        {/* Top copy */}
-        <div className="pt-20 pb-10 lg:pt-24 lg:pb-12 max-w-xl">
-          {/* Eyebrow */}
-          <div className={`hero-badge inline-flex items-center gap-2 border border-white/25 rounded-full px-4 py-1.5 mb-7 backdrop-blur-sm bg-white/5 ${loaded ? "" : "opacity-0"}`}>
-            <span className="live-dot w-1.5 h-1.5 rounded-full bg-[#2DC9A0] flex-shrink-0" />
-            <span className="text-[11px] font-semibold tracking-widest text-white/80 uppercase">
-              Global Medicine Availability Infrastructure
-            </span>
+          <div className="relative z-10 flex h-full max-w-xl flex-col justify-center px-7 sm:px-10 lg:px-12">
+            <div
+              className={`hero-badge mb-6 inline-flex items-center gap-2 self-start rounded-full border border-white/25 bg-[#FFFFFF26] px-4 py-1.5 backdrop-blur-sm ${
+                loaded ? "" : "opacity-0"
+              }`}
+            >
+              <span className="live-dot h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2DC9A0]" />
+              <span className="text-[11px] font-semibold uppercase tracking-widest text-white/80">
+                Global Medicine Availability Infrastructure
+              </span>
+            </div>
+
+            <h1
+              className={`hero-text mb-5 text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl lg:text-[2.75rem] ${
+                loaded ? "" : "opacity-0"
+              }`}
+            >
+              The global search
+              <br />
+              layer for <span className="text-[#2DC9A0]">medicine</span>
+              <br />
+              <span className="text-[#2DC9A0]">availability.</span>
+            </h1>
+
+            <p
+              className={`hero-body max-w-lg text-[15px] leading-relaxed text-white/90 sm:text-base ${
+                loaded ? "" : "opacity-0"
+              }`}
+            >
+              Search verified pharmacies, check availability confidence, save
+              medicines, and monitor updates — without ZoikoMeds prescribing,
+              dispensing, or guaranteeing medicine availability.
+            </p>
           </div>
-
-          {/* Headline */}
-          <h1 className={`hero-text text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.05] text-white mb-5 ${loaded ? "" : "opacity-0"}`}>
-            The global search<br />
-            layer for{" "}
-            <span className="text-[#2DC9A0] italic">medicine</span>
-            <br />
-            <span className="text-[#2DC9A0] italic">availability.</span>
-          </h1>
-
-          {/* Body */}
-          <p className={`hero-body text-white/60 text-base sm:text-lg leading-relaxed max-w-md ${loaded ? "" : "opacity-0"}`}>
-            Search verified pharmacies, check availability confidence, save medicines, and monitor
-            updates — without ZoikoMeds prescribing, dispensing, or guaranteeing medicine availability.
-          </p>
         </div>
 
-        {/* ── WIDGET CARD ── */}
-        <div className={`widget-rise pb-16 ${loaded ? "" : "opacity-0"}`}>
+        {/* ── WIDGET CARD — overlaps bottom of image ── */}
+        <div
+          className={`widget-rise relative z-20 mx-auto -mt-20 max-w-4xl px-2 pb-10 sm:px-0 ${
+            loaded ? "" : "opacity-0"
+          }`}
+        >
           <MedicineSearchWidget />
         </div>
       </div>

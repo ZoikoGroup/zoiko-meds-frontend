@@ -17,9 +17,9 @@ import {
 
 
 export const metadata: Metadata = {
-  title: "About ZoikoMeds — The Global Intelligence Layer for Medicine Availability",
+  title: "About ZoikoMeds | Medicine Availability Platform",
   description:
-    "ZoikoMeds helps make medicine availability visible, verifiable, and actionable — connecting verified pharmacy inventory signals with patient search, pharmacy workflows, health system visibility, and shortage intelligence.",
+    "Learn about ZoikoMeds, a platform making medicine availability visible through verified pharmacy signals, intelligence engines, and secure systems.",
 };
 
 export default function AboutPage() {

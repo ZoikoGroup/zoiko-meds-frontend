@@ -75,7 +75,7 @@ export default function HomeEnterpriseSection() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+          <h2 className="text-[38px] font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Intelligence-grade data
             <br />
             for <span className="text-[#0A9B74]">institutional buyers.</span>

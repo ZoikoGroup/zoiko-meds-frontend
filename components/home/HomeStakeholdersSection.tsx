@@ -101,7 +101,7 @@ export default function HomeStakeholdersSection() {
             Built for every role
           </span>
 
-          <h2 className="mt-5 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
+          <h2 className="mt-5 text-[38px] font-extrabold leading-tight text-slate-900 sm:text-5xl">
             One platform.
             <br />
             <span className="text-[#0A9B74]">Every stakeholder.</span>

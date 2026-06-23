@@ -51,11 +51,11 @@ function StatItem({ stat, start }: { stat: Stat; start: boolean }) {
 
   return (
     <div
-      className={`group relative flex flex-col items-center justify-center px-6 py-10 text-center transition-all duration-500 ease-out ${
+      className={`group relative  flex flex-col items-center justify-center px-6 py-10 text-center transition-all duration-500 ease-out ${
         start ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       }`}
     >
-      <div className="relative text-3xl font-bold text-[#0A9B74] transition-transform duration-300 group-hover:scale-110 sm:text-4xl">
+      <div className="relative text-3xl  font-bold text-[#0A9B74] transition-transform duration-300 group-hover:scale-110 sm:text-4xl">
         {isGdpr ? (
           "GDPR"
         ) : (

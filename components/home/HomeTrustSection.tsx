@@ -106,7 +106,7 @@ export default function HomeTrustSection() {
             Trust & compliance
           </span>
 
-          <h2 className="mt-5 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-5 text-[38px] font-extrabold leading-tight text-slate-900 sm:text-4xl">
             Built for verified trust
             <br />
             and <span className="text-[#0A9B74]">regulated environments.</span>
