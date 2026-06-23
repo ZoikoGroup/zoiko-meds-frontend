@@ -35,12 +35,7 @@ const NAV_ITEMS: NavItem[] = [
     { label: "AI Insights", href: "/intelligence/ai", description: "Predictive health intelligence" },
     { label: "Reports", href: "/intelligence/reports", description: "Compliance & performance" },
   ]},
-  { label: "About", dropdown: [
-    { label: "Our Story", href: "/about", description: "Who we are" },
-    { label: "Team", href: "/about/team", description: "Meet the team" },
-    { label: "Careers", href: "/about/careers", description: "Join ZoikoMeds" },
-    { label: "Press", href: "/about/press", description: "News & media" },
-  ]},
+  { label: "About", href: "/about/" },
 ];
 
 function USFlag() {
@@ -164,7 +159,6 @@ export default function Navbar() {
           maxWidth: "1280px", margin: "0 auto", padding: "0 24px",
           height: "40px", display: "flex", alignItems: "center",
         }}>
-          {/* LEFT: pulse dot + monitoring active — sits at left edge */}
           <div style={{ display: "flex", alignItems: "center", gap: "7px", flexShrink: 0 }}>
             <span style={{ position: "relative", display: "inline-flex", width: "8px", height: "8px" }}>
               <span style={{
@@ -179,10 +173,8 @@ export default function Navbar() {
             </span>
           </div>
 
-          {/* DIVIDER */}
           <div style={{ width: "1px", height: "14px", backgroundColor: "rgba(255,255,255,0.2)", margin: "0 16px", flexShrink: 0 }} />
 
-          {/* FLAG + REGION — sits right next to left item */}
           <div style={{ display: "flex", alignItems: "center", gap: "7px", flexShrink: 0 }}>
             <USFlag />
             <span style={{ color: "rgba(255,255,255,0.88)", fontSize: "12px", fontWeight: 500, whiteSpace: "nowrap" }}>
@@ -190,10 +182,8 @@ export default function Navbar() {
             </span>
           </div>
 
-          {/* FLEX SPACER — pushes right content to far right */}
           <div style={{ flex: 1 }} />
 
-          {/* RIGHT: emergency notice */}
           <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "11.5px", textAlign: "right", flexShrink: 0 }}>
             For emergencies, call local emergency services. ZoikoMeds does not provide medical advice.
           </span>
@@ -209,7 +199,6 @@ export default function Navbar() {
         boxShadow: scrolled ? "0 2px 16px rgba(0,0,0,0.08)" : "none",
         transition: "box-shadow 0.3s ease",
       }}>
-        {/* Sticky accent line */}
         <div style={{
           height: "2px",
           background: "linear-gradient(90deg, #263D88, #00A99D, #263D88)",
@@ -232,20 +221,37 @@ export default function Navbar() {
                   onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <button style={{
-                    display: "flex", alignItems: "center", gap: "4px",
-                    padding: "8px 12px", borderRadius: "8px", border: "none",
-                    fontSize: "14px", fontWeight: 500, cursor: "pointer",
-                    fontFamily: "var(--font-jakarta), sans-serif",
-                    backgroundColor: activeDropdown === item.label ? "#f0f4ff" : "transparent",
-                    color: activeDropdown === item.label ? "#263D88" : "#374151",
-                    transition: "all 0.15s ease",
-                  }}>
-                    {item.label}
-                    {item.dropdown && (
+                  {/* Plain link (no dropdown) */}
+                  {!item.dropdown ? (
+                    <Link href={item.href!} style={{
+                      display: "flex", alignItems: "center",
+                      padding: "8px 12px", borderRadius: "8px",
+                      fontSize: "14px", fontWeight: 500, textDecoration: "none",
+                      fontFamily: "var(--font-jakarta), sans-serif",
+                      color: "#374151",
+                      transition: "all 0.15s ease",
+                    }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = "#f0f4ff"; (e.currentTarget as HTMLElement).style.color = "#263D88"; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = "transparent"; (e.currentTarget as HTMLElement).style.color = "#374151"; }}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    /* Button with dropdown */
+                    <button style={{
+                      display: "flex", alignItems: "center", gap: "4px",
+                      padding: "8px 12px", borderRadius: "8px", border: "none",
+                      fontSize: "14px", fontWeight: 500, cursor: "pointer",
+                      fontFamily: "var(--font-jakarta), sans-serif",
+                      backgroundColor: activeDropdown === item.label ? "#f0f4ff" : "transparent",
+                      color: activeDropdown === item.label ? "#263D88" : "#374151",
+                      transition: "all 0.15s ease",
+                    }}>
+                      {item.label}
                       <ChevronDown size={14} style={{ transition: "transform 0.2s", transform: activeDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
-                    )}
-                  </button>
+                    </button>
+                  )}
+
                   {item.dropdown && <DropdownMenu items={item.dropdown} visible={activeDropdown === item.label} />}
                 </div>
               ))}
@@ -299,25 +305,35 @@ export default function Navbar() {
           <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 16px 16px", overflowY: "auto", maxHeight: "70vh" }}>
             {NAV_ITEMS.map((item) => (
               <div key={item.label} style={{ borderBottom: "1px solid #f7f7f7" }}>
-                <button onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
-                  style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0", fontSize: "14px", fontWeight: 600, color: "#1f2937", background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-jakarta), sans-serif" }}
-                >
-                  {item.label}
-                  {item.dropdown && <ChevronDown size={14} style={{ transition: "transform 0.2s", transform: mobileExpanded === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />}
-                </button>
-                {item.dropdown && (
-                  <div style={{ maxHeight: mobileExpanded === item.label ? "400px" : "0px", overflow: "hidden", transition: "max-height 0.25s ease" }}>
-                    <div style={{ paddingBottom: "8px", paddingLeft: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
-                      {item.dropdown.map((sub) => (
-                        <Link key={sub.label} href={sub.href}
-                          style={{ padding: "8px 12px", fontSize: "13px", color: "#6b7280", textDecoration: "none", borderRadius: "8px", transition: "all 0.15s" }}
-                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#00A99D"; (e.currentTarget as HTMLElement).style.background = "#f0fdfb"; }}
-                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#6b7280"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
-                          onClick={() => setMobileOpen(false)}
-                        >{sub.label}</Link>
-                      ))}
+                {/* Mobile: plain link for About, accordion for others */}
+                {!item.dropdown ? (
+                  <Link href={item.href!}
+                    style={{ display: "block", padding: "14px 0", fontSize: "14px", fontWeight: 600, color: "#1f2937", textDecoration: "none" }}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <>
+                    <button onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                      style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 0", fontSize: "14px", fontWeight: 600, color: "#1f2937", background: "none", border: "none", cursor: "pointer", fontFamily: "var(--font-jakarta), sans-serif" }}
+                    >
+                      {item.label}
+                      <ChevronDown size={14} style={{ transition: "transform 0.2s", transform: mobileExpanded === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
+                    </button>
+                    <div style={{ maxHeight: mobileExpanded === item.label ? "400px" : "0px", overflow: "hidden", transition: "max-height 0.25s ease" }}>
+                      <div style={{ paddingBottom: "8px", paddingLeft: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                        {item.dropdown.map((sub) => (
+                          <Link key={sub.label} href={sub.href}
+                            style={{ padding: "8px 12px", fontSize: "13px", color: "#6b7280", textDecoration: "none", borderRadius: "8px", transition: "all 0.15s" }}
+                            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#00A99D"; (e.currentTarget as HTMLElement).style.background = "#f0fdfb"; }}
+                            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#6b7280"; (e.currentTarget as HTMLElement).style.background = "transparent"; }}
+                            onClick={() => setMobileOpen(false)}
+                          >{sub.label}</Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  </>
                 )}
               </div>
             ))}
