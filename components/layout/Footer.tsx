@@ -18,8 +18,8 @@ const pharmacyLinks = [
   { label: "Pharmacy portal", href: "/pharmacy-portal/" },
   { label: "Verification standards", href: "/verification/" },
   { label: "Inventory upload", href: "/inventory-upload/" },
-  { label: "Confirmation requests", href: "#" },
-  { label: "Pharmacy support", href: "#" },
+  { label: "Confirmation requests", href: "/confirmation-requests/" },
+  { label: "Pharmacy support", href: "/pharmacy-support/" },
 ];
 
 const providerLinks = [
