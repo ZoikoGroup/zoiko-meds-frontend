@@ -14,9 +14,9 @@ const platformLinks = [
 ];
 
 const pharmacyLinks = [
-  { label: "Join the network", href: "#" },
-  { label: "Pharmacy portal", href: "#" },
-  { label: "Verification standards", href: "#" },
+  { label: "Join the network", href: "/join-the-network/" },
+  { label: "Pharmacy portal", href: "/pharmacy-portal/" },
+  { label: "Verification standards", href: "/verification/" },
   { label: "Inventory upload", href: "#" },
   { label: "Confirmation requests", href: "#" },
   { label: "Pharmacy support", href: "#" },
