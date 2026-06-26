@@ -10,7 +10,7 @@ const platformLinks = [
   { label: "Saved searches", href: "#" },
   { label: "Availability alerts", href: "#" },
   { label: "Caregiver access", href: "#" },
-  { label: "Availability confidence", href: "#" },
+  { label: "Availability confidence", href: "/availability-confidence/" },
 ];
 
 const pharmacyLinks = [
