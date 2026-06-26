@@ -55,7 +55,7 @@ const CAREGIVER_CARD = {
   cta: "Explore Caregiver Access",
   ctaFilled: false,
   href: "#",
-};
+} as const;
 
 type IconName = "doc" | "home" | "alert" | "people";
 
@@ -80,7 +80,7 @@ export default function ReferralGuidanceWhenToReferSection() {
     <section ref={ref} className="relative w-full bg-[#F4F6FA] py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="mx-auto max-w-xl text-center">
           <Reveal index={0} active={mounted}>
             <h2 className="text-[2rem] font-extrabold leading-tight text-[#0F1F4E] sm:text-[2.2rem]">
@@ -96,21 +96,21 @@ export default function ReferralGuidanceWhenToReferSection() {
           </Reveal>
         </div>
 
-        {/* ── Top 3-column grid ── */}
+        {/* Top 3-column grid */}
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {REFERRAL_CARDS.map((card, i) => (
             <ReferralCard key={card.title} {...card} index={i + 2} active={mounted} />
           ))}
         </div>
 
-        {/* ── Bottom single card (left-aligned, 1/3 width on lg) ── */}
+        {/* Bottom single card (left-aligned, 1/3 width on lg) */}
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Reveal index={6} active={mounted}>
             <ReferralCardInner {...CAREGIVER_CARD} />
           </Reveal>
         </div>
 
-        {/* ── Disclaimer bar ── */}
+        {/* Disclaimer bar */}
         <Reveal index={8} active={mounted}>
           <div className="mt-6 flex items-start gap-3 rounded-2xl border border-[#E7EAF1] border-l-4 border-l-[#3B5BDB] bg-white p-5">
             <span className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#E3E8FB] text-[#3B5BDB]">
@@ -136,7 +136,7 @@ export default function ReferralGuidanceWhenToReferSection() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  ReferralCard (with Reveal wrapper)                                   */
+/*  ReferralCard (with Reveal wrapper)                                  */
 /* ------------------------------------------------------------------ */
 function ReferralCard({
   icon, title, description, dos, donts, cta, ctaFilled, href, index, active,
@@ -230,7 +230,7 @@ function ReferralCardInner({
 }
 
 /* ------------------------------------------------------------------ */
-/*  Icons                                                               */
+/*  Icons                                                                */
 /* ------------------------------------------------------------------ */
 function ReferralIcon({ name }: { name: IconName }) {
   const c = { viewBox: "0 0 24 24", fill: "none" as const, style: { width: 20, height: 20 } };

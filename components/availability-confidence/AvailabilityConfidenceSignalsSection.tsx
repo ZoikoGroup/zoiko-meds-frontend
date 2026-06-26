@@ -2,15 +2,28 @@
 
 import { useEffect, useRef, useState } from "react";
 
-
-
 const ACCENT = "#0FAA87";
 
 type Tone = "green" | "amber" | "blue" | "gray";
+type IconName = "check" | "warning" | "phone" | "ban";
 
-const SIGNALS = [
+type SignalData = {
+  tone: Tone;
+  icon: IconName;
+  badge: string;
+  description: string;
+  freshness: string;
+  action: string;
+};
+
+// Explicitly typed as SignalData[] so every field (icon, tone) stays
+// narrowed to its literal union instead of widening to `string`.
+// Without this annotation, `icon: "check"` infers as `string`, which
+// no longer matches SignalCard's `icon: IconName` prop — that mismatch
+// was the source of the type error.
+const SIGNALS: SignalData[] = [
   {
-    tone: "green" as Tone,
+    tone: "green",
     icon: "check",
     badge: "Strong signal",
     description:
@@ -19,7 +32,7 @@ const SIGNALS = [
     action: "View pharmacy details or contact the pharmacy.",
   },
   {
-    tone: "amber" as Tone,
+    tone: "amber",
     icon: "warning",
     badge: "Limited signal",
     description:
@@ -28,7 +41,7 @@ const SIGNALS = [
     action: "Contact the pharmacy before making a trip; consider creating an alert.",
   },
   {
-    tone: "blue" as Tone,
+    tone: "blue",
     icon: "phone",
     badge: "Confirmation needed",
     description:
@@ -37,7 +50,7 @@ const SIGNALS = [
     action: "Call, message, or request confirmation where supported.",
   },
   {
-    tone: "gray" as Tone,
+    tone: "gray",
     icon: "ban",
     badge: "No current signal",
     description:
@@ -181,15 +194,7 @@ function SignalCard({
   freshness,
   action,
   index,
-}: {
-  tone: Tone;
-  icon: "check" | "warning" | "phone" | "ban";
-  badge: string;
-  description: string;
-  freshness: string;
-  action: string;
-  index: number;
-}) {
+}: SignalData & { index: number }) {
   const colors = TONE_STYLES[tone];
 
   return (
@@ -240,11 +245,7 @@ function SignalCard({
   );
 }
 
-function SignalIcon({
-  name,
-}: {
-  name: "check" | "warning" | "phone" | "ban";
-}) {
+function SignalIcon({ name }: { name: IconName }) {
   const common = { viewBox: "0 0 16 16", fill: "none" as const, className: "h-3.5 w-3.5" };
 
   switch (name) {

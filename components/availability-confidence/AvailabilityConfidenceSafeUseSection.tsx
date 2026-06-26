@@ -2,14 +2,27 @@
 
 import { useEffect, useRef, useState } from "react";
 
-
 const ACCENT = "#0FAA87";
 
 type Tone = "green" | "amber" | "blue" | "gray";
+type IconName = "check" | "warning" | "phone" | "ban";
 
-const ROWS = [
+type SafeUseRowData = {
+  tone: Tone;
+  icon: IconName;
+  badge: string;
+  description: string;
+  cta: string;
+};
+
+// Explicitly typed as SafeUseRowData[] so every field (icon, tone)
+// stays narrowed to its literal union instead of widening to `string`.
+// Without this annotation, `icon: "check"` infers as `string`, which
+// no longer matches SafeUseRow's `icon: IconName` prop — that mismatch
+// was the source of the type error.
+const ROWS: SafeUseRowData[] = [
   {
-    tone: "green" as Tone,
+    tone: "green",
     icon: "check",
     badge: "Strong signal",
     description:
@@ -17,7 +30,7 @@ const ROWS = [
     cta: "View Pharmacy Details",
   },
   {
-    tone: "amber" as Tone,
+    tone: "amber",
     icon: "warning",
     badge: "Limited signal",
     description:
@@ -25,14 +38,14 @@ const ROWS = [
     cta: "Create Availability Alert",
   },
   {
-    tone: "blue" as Tone,
+    tone: "blue",
     icon: "phone",
     badge: "Confirmation needed",
     description: "Use the pharmacy contact or confirmation option where supported.",
     cta: "Request Confirmation",
   },
   {
-    tone: "gray" as Tone,
+    tone: "gray",
     icon: "ban",
     badge: "No current signal",
     description:
@@ -154,14 +167,7 @@ function SafeUseRow({
   description,
   cta,
   index,
-}: {
-  tone: Tone;
-  icon: "check" | "warning" | "phone" | "ban";
-  badge: string;
-  description: string;
-  cta: string;
-  index: number;
-}) {
+}: SafeUseRowData & { index: number }) {
   const colors = TONE_STYLES[tone];
 
   return (
@@ -203,11 +209,7 @@ function SafeUseRow({
   );
 }
 
-function SafeUseIcon({
-  name,
-}: {
-  name: "check" | "warning" | "phone" | "ban";
-}) {
+function SafeUseIcon({ name }: { name: IconName }) {
   const common = { viewBox: "0 0 16 16", fill: "none" as const, className: "h-3.5 w-3.5" };
 
   switch (name) {
