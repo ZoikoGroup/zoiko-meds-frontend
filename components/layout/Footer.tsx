@@ -26,9 +26,9 @@ const providerLinks = [
   { label: "Provider overview", href: "/provider-overview/" },
   { label: "Patient support workflows", href: "/patient-support/" },
   { label: "Care team access", href: "/care-team-access/" },
-  { label: "Availability signals", href: "#" },
-  { label: "Referral guidance", href: "#" },
-  { label: "Provider support", href: "#" },
+  { label: "Availability signals", href: "/availability-signals/" },
+  { label: "Referral guidance", href: "/referral-guidance/" },
+  { label: "Provider support", href: "/provider-support/" },
 ];
 
 const enterpriseLinks = [
