@@ -23,9 +23,9 @@ const pharmacyLinks = [
 ];
 
 const providerLinks = [
-  { label: "Provider overview", href: "#" },
-  { label: "Patient support workflows", href: "#" },
-  { label: "Care team access", href: "#" },
+  { label: "Provider overview", href: "/provider-overview/" },
+  { label: "Patient support workflows", href: "/patient-support/" },
+  { label: "Care team access", href: "/care-team-access/" },
   { label: "Availability signals", href: "#" },
   { label: "Referral guidance", href: "#" },
   { label: "Provider support", href: "#" },
