@@ -1,0 +1,5 @@
+export { default as CaregiverHero } from './CaregiverHero'
+export { default as CaregiverFeatures } from './CaregiverFeatures'
+export { default as CaregiverDashboard } from './CaregiverDashboard'
+export { default as CaregiverPrivacy } from './CaregiverPrivacy'
+export { default as CaregiverCta } from './CaregiverCta'
