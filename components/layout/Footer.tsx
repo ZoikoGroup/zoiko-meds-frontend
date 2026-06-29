@@ -32,8 +32,8 @@ const providerLinks = [
 ];
 
 const enterpriseLinks = [
-  { label: "Enterprise solutions", href: "#" },
-  { label: "ZoikoSignal™ intelligence", href: "#" },
+  { label: "Enterprise solutions", href: "/enterprise-solutions/" },
+  { label: "ZoikoSignal™ intelligence", href: "/zoikosignal-intelligence/" },
   { label: "ZoikoAvail™ API", href: "#" },
   { label: "MediBase™ data", href: "#" },
   { label: "Health systems", href: "#" },
