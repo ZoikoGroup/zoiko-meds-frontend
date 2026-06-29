@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Shield, BadgeCheck, Lock, Info } from "lucide-react";
 
 const platformLinks = [
-  { label: "Search medicines", href: "#" },
-  { label: "Create account", href: "#" },
-  { label: "Saved searches", href: "#" },
+  { label: "Search medicines", href: "/searchmed/" },
+  { label: "Create account", href: "/create-account/" },
+  { label: "Saved searches", href: "/saved-searches/" },
   { label: "Availability alerts", href: "#" },
   { label: "Caregiver access", href: "#" },
   { label: "Availability confidence", href: "/availability-confidence/" },
@@ -34,7 +34,7 @@ const providerLinks = [
 const enterpriseLinks = [
   { label: "Enterprise solutions", href: "/enterprise-solutions/" },
   { label: "ZoikoSignal™ intelligence", href: "/zoikosignal-intelligence/" },
-  { label: "ZoikoAvail™ API", href: "#" },
+  { label: "ZoikoAvail™ API", href: "/zoiko-avail-api/" },
   { label: "MediBase™ data", href: "#" },
   { label: "Health systems", href: "#" },
   { label: "Government & public health", href: "#" },
