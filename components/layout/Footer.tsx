@@ -41,12 +41,12 @@ const enterpriseLinks = [
 ];
 
 const trustLinks = [
-  { label: "About ZoikoMeds", href: "#" },
-  { label: "Zoiko Healthcare", href: "#" },
-  { label: "Zoiko Group", href: "#" },
-  { label: "Careers", href: "#" },
-  { label: "Press", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "About ZoikoMeds", href: "/about/" },
+  { label: "Zoiko Healthcare", href: "/zoiko-healthcare/" },
+  { label: "Zoiko Group", href: "/zoiko-group/" },
+  { label: "Careers", href: "/careers/" },
+  { label: "Press", href: "/press/" },
+  { label: "Contact", href: "/contact/" },
 ];
 
 const legalLinks = [
