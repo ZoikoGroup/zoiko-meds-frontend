@@ -1,0 +1,7 @@
+export { default as ZoikoGroupHero } from './ZoikoGroupHero'
+export { default as ZoikoGroupArchitecture } from './ZoikoGroupArchitecture'
+export { default as ZoikoGroupThesis } from './ZoikoGroupthesis'
+export { default as ZoikoGroupStandards } from './ZoikoGroupStandards'
+export { default as ZoikoGroupStakeholders } from './ZoikoGroupStakeholders'
+export { default as ZoikoGroupPlatform } from './ZoikoGroupPlatform'
+export { default as ZoikoGroupContact } from './ZoikoGroupContact'
