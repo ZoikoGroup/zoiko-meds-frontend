@@ -53,10 +53,10 @@ const legalLinks = [
 
   { label: "Trust Center", href: "/trust-center/" },
   { label: "Privacy Center", href: "/privacy-center/" },
-  { label: "Terms of Use", href: "#" },
+  { label: "Terms of Use", href: "/terms-of-use/" },
   { label: "Cookie Settings", href: "#" },
   { label: "Medical Disclaimer", href: "/medical-disclaimer/" },
-  { label: "Controlled Medicine Policy", href: "#" },
+  { label: "Controlled Medicine Policy", href: "/controlled-medicine-policy/" },
   { label: "Accessibility", href: "#" },
 ];
 
