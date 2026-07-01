@@ -1,3 +1,4 @@
+
 import {
   TrustCenterHeroSection,
   TrustCenterDoctrineSection,
@@ -20,4 +21,5 @@ export default function TrustCenterPage() {
       <TrustCenterAccessSection />
     </main>
   );
+
 }
