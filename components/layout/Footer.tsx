@@ -167,7 +167,7 @@ export default function Footer() {
           <FooterColumn title="Pharmacies" links={pharmacyLinks} />
           <FooterColumn title="Healthcare Providers" links={providerLinks} />
           <FooterColumn title="Enterprise & Intelligence" links={enterpriseLinks} />
-          <FooterColumn title="Trust & Legal" links={trustLinks} />
+          <FooterColumn title="Company" links={trustLinks} />
           <FooterColumn title="Legal & Trust" links={legalLinks} />
         </div>
 
